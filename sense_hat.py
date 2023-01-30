@@ -22,28 +22,28 @@ if __name__ == '__main__':
             elif event.direction == "left":
                 # display temp with tree for hot/cold with diff colors and speeds etc
                 temp = round(sns.get_temperature())
-                if temp >= 24:
+                if temp >= 24: # higher than 24C show red background and display 
                     message = 'Temp: %dC'%(temp)
                     sns.show_message(message,.1,text,red)
-                elif temp < 24:
+                elif temp < 24: # lower than 24C show blue background asnd display
                     message = 'Temp: %dC'%(temp)
                     sns.show_message(message,.1,text,blue)
             elif event.direction == "up":
                 # display humidity with tree etc
                 humidity = round(sns.get_humidity())
-                if humidity >= 50:
+                if humidity >= 50: # higher than 50% show red background and display 
                     message = 'Humidity: %d%'%(humidity)
                     sns.show_message(message,.1,text,red)
-                elif humidity < 50:
+                elif humidity < 50: # lower than 50% show blue background asnd display
                     message = 'Humidity: %d%'%(humidity)
                     sns.show_message(message,.1,text,blue)
             elif event.direction == "right":
                 # display presure with tree etc
                 pressure = round(sns.get_pressure())
-                if pressure >= 1013:
+                if pressure >= 1013: # lower than 1013 mbars show blue background asnd display
                     message = 'Pressure: %dmbars'%(pressure)
                     sns.show_message(message,.1,text,red)
-                elif pressure < 1013:
+                elif pressure < 1013: # higher than 1013 mbars show red background and display 
                     message = 'Pressure: %dmbars'%(pressure)
                     sns.show_message(message,.1,text,blue)
             else:
