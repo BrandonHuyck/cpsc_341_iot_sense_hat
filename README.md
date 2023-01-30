@@ -13,7 +13,7 @@ Pressing it right displays the pressure information with fun colors and speeds.
 Quit with a KeyBoard Interupt.
 
 Team Work Division:
-Brandon programmed the text, its speed, the joystick, the code structure, and the README;
+Brandon programmed the joystick, the code structure, and the README;
 Carson programmed the images and their components;
-Jack programmed the text font colors and backgrounds;
+Jack programmed the text and their components;
 Every team member felt content with the amount of work they and the others did.
