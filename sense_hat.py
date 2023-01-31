@@ -9,6 +9,7 @@ Description: A file for practice with the basic functionality of Sense Hat with
 '''
 
 from sense_hat import SenseHat
+import time
 
 if __name__ == '__main__':
 
@@ -32,7 +33,7 @@ if __name__ == '__main__':
 
     r = (255, 0, 0) #Red
     bl = (0, 0, 255) #Blue
-    t = (210, 180, 140) #Tan
+    t = (241, 194, 125) #Tan
     c = (116, 55, 71) #Crimson
     gy = (128, 128, 128) #Grey
     o = (255, 165, 0) #Orange
@@ -59,8 +60,11 @@ if __name__ == '__main__':
     while True:
         for event in sns.stick.get_events():
             if event.direction == "down":
-                # 1. Display images. Define two or more images to display. 
-                pass # display image one followed by image two
+                # Display images. Define two or more images to display (see above). 
+                sns.set_pixels(img_1) #Display Image 1
+                time.sleep(2) #Let the image display for 2 seconds
+                sns.set_pixels(img_2) #Display Image 2
+                time.sleep(2) #Let the Image display for 2 seconds
             elif event.direction == "left":
                 # display temp with tree for hot/cold with diff colors and speeds etc
                 temp = round(sns.get_temperature())
@@ -74,10 +78,10 @@ if __name__ == '__main__':
                 # display humidity with tree etc
                 humidity = round(sns.get_humidity())
                 if humidity >= 50: # higher than 50% show red background and display 
-                    message = 'Humidity: %d%'%(humidity)
+                    message = 'Humidity: %d'%(humidity)
                     sns.show_message(message,.1,text,red)
                 elif humidity < 50: # lower than 50% show blue background asnd display
-                    message = 'Humidity: %d%'%(humidity)
+                    message = 'Humidity: %d'%(humidity)
                     sns.show_message(message,.1,text,blue)
             elif event.direction == "right":
                 # display presure with tree etc
